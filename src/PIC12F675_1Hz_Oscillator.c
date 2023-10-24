@@ -1,5 +1,5 @@
 /*
-1Hz oscilátor na pinu GPIO2
+1Hz oscilÃ¡tor na pinu GPIO2
 */
 //----
 #define GPIO0  GPIO.F0
@@ -16,17 +16,16 @@ void main() {
      GPIO = 0x00;              // priprava portu
      CMCON = 0x07;             // comparator OFF, pin I/O
      ANSEL = 0x00;             // A/D Disable
-     TRISIO = 0b00000000;      // nastaveni portu I/O
-     //OPTION_REG = 0b01111111;  // Global Enable Pull-Up
+     TRISIO = 0b00000000;      // set I/O port
      OPTION_REG.B7 = 1;
-     WPU = 0b00000000;         // nastaveni Pull-Up
+     WPU = 0b00000000;         // disable Pull-Up
 // ----
 
 
 
   while (1) {
-    GPIO.F2 = ~GPIO.F2;  // výmìna stavu pinu
-    Delay_ms(500);       // zpoždìní 0,5s
+    GPIO.F2 = ~GPIO.F2;  // pin state change
+    Delay_ms(500);       // delay 0,5s
   }
   
 }
