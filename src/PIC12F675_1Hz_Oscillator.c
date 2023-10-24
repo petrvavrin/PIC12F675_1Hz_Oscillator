@@ -1,5 +1,5 @@
 /*
-1Hz oscilátor na pinu GPIO2
+1Hz oscillator on GPIO2 pin
 */
 //----
 #define GPIO0  GPIO.F0
@@ -12,8 +12,8 @@
 
 
 void main() {
-// ---- I/O Line
-     GPIO = 0x00;              // priprava portu
+// ---- Init
+     GPIO = 0x00;              // port preparation
      CMCON = 0x07;             // comparator OFF, pin I/O
      ANSEL = 0x00;             // A/D Disable
      TRISIO = 0b00000000;      // set I/O port
